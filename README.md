@@ -44,6 +44,17 @@ var options = ... // see below for possible option values
 var validator = new ZSchema(options);
 ```
 
+##NodeJS & Webpack
+Please donwload [json-loader](https://www.npmjs.com/package/json-loader), then configure it like so :
+```javascript
+loaders: [
+    {
+        test: /\.json$/,
+        loader: 'json-loader'
+    }
+]
+```
+
 ##Sync mode:
 
 ```javascript
@@ -68,9 +79,9 @@ validator.validate(json, schema, function (err, valid) {
 ```html
 <script type="text/javascript" src="../dist/ZSchema-browser-min.js"></script>
 <script type="text/javascript">
-	var validator = new ZSchema();
-	var valid = validator.validate("string", { "type": "string" });
-	console.log(valid);
+    var validator = new ZSchema();
+    var valid = validator.validate("string", { "type": "string" });
+    console.log(valid);
 </script>
 ```
 
